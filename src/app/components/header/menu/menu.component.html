@@ -1,0 +1,51 @@
+<ion-menu side="start" contentId="main-content" menuId="mainMenu">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <!-- Opción de Home -->
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/home" routerDirection="root" lines="none">
+          <ion-icon slot="start" name="home-outline"></ion-icon>
+          <ion-label>Inicio</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      
+      <!-- Opción de Productos -->
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/products" routerDirection="root" lines="none">
+          <ion-icon slot="start" name="cube-outline"></ion-icon>
+          <ion-label>Productos</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      
+      <!-- Opción de Carro -->
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/cart" routerDirection="root" lines="none">
+          <ion-icon slot="start" name="cart-outline"></ion-icon>
+          <ion-label>Carro</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      
+      <!-- Opción de Cambiar Tema -->
+      <ion-menu-toggle auto-hide="true">
+        <ion-item (click)="toggleTheme()" lines="none">
+          <ion-icon slot="start" name="toggle-outline"></ion-icon>
+          <ion-label>Cambiar Tema</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      
+      <!-- Opción de Salir -->
+      <ion-menu-toggle auto-hide="true">
+        <ion-item (click)="logout()" lines="none">
+          <ion-icon slot="start" name="log-out-outline" color="danger"></ion-icon>
+          <ion-label color="danger">Salir</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>

@@ -1,0 +1,14 @@
+.content-with-bottom-nav {
+    padding-bottom: 60px; /* Ajusta la altura según la altura de tu button nav */
+  }
+  :host {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+  }
+  
+  ion-tab-bar {
+    border-top: 1px solid #ccc; /* Opcional, para agregar un borde superior */
+  }

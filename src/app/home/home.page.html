@@ -1,20 +1,42 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Random Duck</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  @if(isLoading){
+    <!-- Spinner mientras se carga la imagen -->
+   <div class="spinner-container">
+     <ion-spinner name="crescent"></ion-spinner>
+     <p>Fetching your duck...</p>
+   </div>
+  }
+      <!-- Botón para generar una nueva imagen -->
+      <ion-button expand="block" color="primary" shape="round" (click)="onGetRandonQuack()">
+        <ion-icon slot="start" name="refresh-circle-outline"></ion-icon>
+        Get Random Duck
+      </ion-button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- Tarjeta que contiene la imagen -->
+   @if(randomImage){
+
+    <ion-card class="duck-card">
+      <ion-card-header>
+        <ion-card-title>Duck of the Day</ion-card-title>
+        <ion-card-subtitle>Click below to see another one</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <img [src]="randomImage" alt="Random Duck" class="duck-image" />
+      </ion-card-content>
+  
+      <ion-button expand="block" color="secondary" shape="round" (click)="onGetRandonQuack()">
+        <ion-icon slot="start" name="camera-outline"></ion-icon>
+        Another Duck
+      </ion-button>
+    </ion-card>
+   }
+   
+  
 </ion-content>

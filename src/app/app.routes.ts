@@ -10,4 +10,13 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'galery',
+    loadComponent: () => import('./pages/galery/galery.page').then( m => m.GaleryPage)
+  },
+  {
+    path: 'image-detail/:image',
+    loadComponent: () => import('./pages/image-detail/image-detail.page').then( m => m.ImageDetailPage)
+  },
+  { path: '', redirectTo: 'gallery', pathMatch: 'full' }
 ];
