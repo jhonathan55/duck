@@ -1,0 +1,7 @@
+{
+  "name": "ChilePasajes2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
